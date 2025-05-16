@@ -9,14 +9,20 @@ import {
   Body,
   HttpCode,
   Query,
-  ParseIntPipe, // Import Query decorator to extract query params
+  ParseIntPipe,
+  UseInterceptors,
+  UseFilters,
 } from '@nestjs/common';
 import { MushroomsService } from './mushrooms.service';
 import { Mushroom } from './interfaces/mushroom.interface';
-import { QueryFilterDto } from './dto/query-filter.dto'; // Assuming your DTO is in the dto folder
+import { QueryFilterDto } from './dto/query-filter.dto';
 import { CreateMushroomDto } from './dto/create-mushroom.dto';
+import { ResponseInterceptor } from 'src/response/response.interceptor';
+import { CustomExceptionFilter } from 'src/custom-exception/custom-exception.filter';
 
 @Controller('mushrooms')
+@UseInterceptors(ResponseInterceptor)
+@UseFilters(CustomExceptionFilter)
 export class MushroomsController {
   constructor(private readonly featureService: MushroomsService) {}
 
