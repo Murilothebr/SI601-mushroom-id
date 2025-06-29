@@ -1,0 +1,21 @@
+services:
+  db:
+    image: mysql:8.4.0
+    container_name: db
+    environment:
+      MYSQL_DATABASE: "$DB_DATABASE"
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:

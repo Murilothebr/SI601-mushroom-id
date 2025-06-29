@@ -28,39 +28,39 @@ export class MushroomsController {
 
   @Post()
   @HttpCode(201)
-  create(@Body() body: CreateMushroomDto): Mushroom {
+  async create(@Body() body: CreateMushroomDto): Promise<any> {
     return this.featureService.create(body);
   }
 
   @Get()
-  findAll(@Query() query: QueryFilterDto): Mushroom[] {
+  async findAll(@Query() query: QueryFilterDto): Promise<any[]> {
     return this.featureService.findAll(query);
   }
 
   @Get(':id')
-  findOne(@Param('id', ParseIntPipe) id: number): Mushroom {
+  async findOne(@Param('id', ParseIntPipe) id: number): Promise<any> {
     return this.featureService.findOne(id);
   }
 
   @Put(':id')
-  update(
+  async update(
     @Param('id', ParseIntPipe) id: number,
     @Body() updateData: Partial<Mushroom>,
-  ): Mushroom {
+  ): Promise<any> {
     return this.featureService.update(id, updateData);
   }
 
   @Patch(':id')
-  partialUpdate(
+  async partialUpdate(
     @Param('id', ParseIntPipe) id: number,
     @Body() partialUpdateData: Partial<Mushroom>,
-  ): Mushroom {
+  ): Promise<any> {
     return this.featureService.update(id, partialUpdateData);
   }
 
   @Delete(':id')
   @HttpCode(204)
-  remove(@Param('id', ParseIntPipe) id: number): void {
-    this.featureService.remove(id);
+  async remove(@Param('id', ParseIntPipe) id: number): Promise<void> {
+    return this.featureService.remove(id);
   }
 }

@@ -1,6 +1,6 @@
 # Mushroom ID
 
-## Identificação/Autor: Murilo Marçal
+## Autor: Murilo Marçal
 
 ## Descrição
 
@@ -9,7 +9,7 @@ API crud de cogumelos para tornar o aprendizado sobre cogumelos mais interativo 
 ## Diagrama de Entidade-Relacionamento (ERD):
 
   ### https://dbdiagram.io/d/680831891ca52373f5f53f8b
-  
+
   ![Untitled](https://github.com/user-attachments/assets/42502a90-4eff-4669-bf9d-2c718d279f86)
 
 ## Compilar e rodar o projeto
@@ -62,4 +62,4 @@ $ npm run start:prod
 - [ ] **ID19:** Configuração da autenticação utilizando JWT.
 - [ ] **ID20:** Implementação de Guards para controle de acesso baseado em roles e permissões.
 - [ ] **ID21:** Configuração e uso de middleware para manipulação prévia das requisições.
-- [ ] **ID22:** Implementação de interceptadores para logging ou manip
+- [ ] **ID22:** Implementação de interceptadores para realizar logging ou modificar as respostas antes de enviá-las ao cliente.

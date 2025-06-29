@@ -10,4 +10,9 @@ export class QueryFilterDto {
   @IsOptional()
   @Transform(({ value }) => parseInt(value, 10))
   page?: number;
+
+  @IsOptional()
+  @IsString({ message: 'O nome científico deve ser uma string.' })
+  @Transform(({ value }) => value?.trim())
+  scientific_name?: string;
 }
