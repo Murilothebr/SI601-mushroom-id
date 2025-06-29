@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { ValidationPipe, VersioningType } from '@nestjs/common';
 import { CamelCaseInterceptor } from './interceptors/camel-case.interceptor';
 import { LoggingInterceptor } from './interceptors/logging.interceptor';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -25,6 +26,17 @@ async function bootstrap() {
       },
     }),
   );
+
+  const config = new DocumentBuilder()
+    .setTitle('Mushrooms API')
+    .setDescription('API documentation for Mushrooms application')
+    .setVersion('1.0')
+    .addBearerAuth()
+    .build();
+
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document);
+
   await app.listen(3000);
 }
 
