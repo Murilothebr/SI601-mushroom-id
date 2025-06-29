@@ -14,12 +14,17 @@ model Mushroom {
   hint            String
   description     String
   created_at      DateTime @default(now())
+
+  user_id         Int
+  created_by      User     @relation(fields: [user_id], references: [id])
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
+  id        Int         @id @default(autoincrement())
+  email     String      @unique
   password  String
-  role      String   @default("USER")
-  createdAt DateTime @default(now())
+  role      String      @default("USER")
+  createdAt DateTime    @default(now())
+
+  mushrooms Mushroom[]
 }

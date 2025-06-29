@@ -13,7 +13,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class MushroomsService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async create(data: CreateMushroomDto): Promise<Mushroom> {
+  async create(data: CreateMushroomDto, userId: number): Promise<Mushroom> {
     try {
       return await this.prisma.mushroom.create({
         data: {
@@ -21,17 +21,39 @@ export class MushroomsService {
           image_url: data.imageUrl,
           hint: data.hint,
           description: data.description,
+          created_by: {
+            connect: { id: userId },
+          },
         },
       });
     } catch (error) {
-      if (error instanceof Prisma.PrismaClientKnownRequestError) {
-        if (error.code === 'P2002') {
-          throw new ConflictException(
-            `Mushroom with name "${data.scientificName}" already exists.`,
-          );
-        }
+      if (
+        error instanceof Prisma.PrismaClientKnownRequestError &&
+        error.code === 'P2002'
+      ) {
+        throw new ConflictException(
+          `Mushroom with name "${data.scientificName}" already exists.`,
+        );
       }
+
+      console.log(error);
       throw new InternalServerErrorException('Failed to create mushroom.');
+    }
+  }
+
+  async findByUser(userId: number): Promise<Mushroom[]> {
+    try {
+      return await this.prisma.mushroom.findMany({
+        where: {
+          created_by: {
+            id: userId,
+          },
+        },
+      });
+    } catch (error) {
+      throw new InternalServerErrorException(
+        'Failed to retrieve user mushrooms.',
+      );
     }
   }
 
