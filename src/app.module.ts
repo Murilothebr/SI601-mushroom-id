@@ -6,6 +6,8 @@ import { MushroomsService } from './mushrooms/mushrooms.service';
 import { PrismaService } from './prisma/prisma.service';
 import { AuthModule } from './auth/auth.module';
 import { LoggerMiddleware } from './middlewares/logger.middleware';
+import { JwtAuthMiddleware } from './middlewares/jwt-auth.middleware';
+import { MushroomsController } from './mushrooms/mushrooms.controller';
 
 @Module({
   imports: [MushroomsModule, AuthModule],
@@ -15,5 +17,6 @@ import { LoggerMiddleware } from './middlewares/logger.middleware';
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(LoggerMiddleware).forRoutes('*');
+    consumer.apply(JwtAuthMiddleware).forRoutes(MushroomsController);
   }
 }

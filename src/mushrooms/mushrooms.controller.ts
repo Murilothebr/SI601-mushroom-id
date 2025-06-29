@@ -12,6 +12,7 @@ import {
   ParseIntPipe,
   UseInterceptors,
   UseFilters,
+  UseGuards,
 } from '@nestjs/common';
 import { MushroomsService } from './mushrooms.service';
 import { Mushroom } from './interfaces/mushroom.interface';
@@ -19,6 +20,7 @@ import { QueryFilterDto } from './dto/query-filter.dto';
 import { CreateMushroomDto } from './dto/create-mushroom.dto';
 import { ResponseInterceptor } from 'src/response/response.interceptor';
 import { CustomExceptionFilter } from 'src/custom-exception/custom-exception.filter';
+import { AdminGuard } from 'src/guards/admin.guard';
 
 @Controller('mushrooms')
 @UseInterceptors(ResponseInterceptor)
@@ -59,6 +61,7 @@ export class MushroomsController {
   }
 
   @Delete(':id')
+  @UseGuards(AdminGuard)
   @HttpCode(204)
   async remove(@Param('id', ParseIntPipe) id: number): Promise<void> {
     return this.featureService.remove(id);
