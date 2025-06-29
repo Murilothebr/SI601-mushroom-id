@@ -3,16 +3,17 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MushroomsModule } from './mushrooms/mushrooms.module';
 import { MushroomsService } from './mushrooms/mushrooms.service';
-import { AuthMiddleware } from './auth/auth.middleware';
 import { PrismaService } from './prisma/prisma.service';
+import { AuthModule } from './auth/auth.module';
+import { LoggerMiddleware } from './middlewares/logger.middleware';
 
 @Module({
-  imports: [MushroomsModule],
+  imports: [MushroomsModule, AuthModule],
   controllers: [AppController],
   providers: [AppService, MushroomsService, PrismaService],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(AuthMiddleware).forRoutes('*');
+    consumer.apply(LoggerMiddleware).forRoutes('*');
   }
 }
