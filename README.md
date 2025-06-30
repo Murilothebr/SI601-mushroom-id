@@ -23,7 +23,7 @@ Antes de rodar o projeto, certifique-se de ter os seguintes requisitos instalado
 
 ## 🐘 Como rodar o banco de dados (MySQL)
 
-1. **Suba o container do banco de dados com Docker Compose:**
+1. **Rodar o projeto e banco de dados com Docker Compose:**
 
 ```bash
 docker-compose up -d
@@ -31,7 +31,7 @@ docker-compose up -d
 npx prisma migrate dev
 ```
 
-## Compilar e rodar o projeto
+## Rodar o projeto localmente (terminal)
 
 ```bash
 
