@@ -17,7 +17,7 @@ Antes de rodar o projeto, certifique-se de ter os seguintes requisitos instalado
 - [Docker](https://www.docker.com/) (versão 20 ou superior recomendada)
 - [Docker Compose](https://docs.docker.com/compose/) (v2 ou superior)
 - [Node.js](https://nodejs.org/) (versão 18 ou superior)
-- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
+- [npm](https://www.npmjs.com/) (versão 10 ou superior)
 
 ---
 
