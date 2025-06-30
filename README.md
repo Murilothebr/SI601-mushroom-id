@@ -61,8 +61,8 @@ $ npm run start
 
 #### RA3 - Realizar testes automatizados da API
 
-- [ ] **ID12:** Implementação de testes automatizados (unitários/integrados) utilizando Jest.
-- [ ] **ID13:** Garantia de cobertura de testes nas principais rotas e serviços.
+- [x] **ID12:** Implementação de testes automatizados (unitários/integrados) utilizando Jest.
+- [x] **ID13:** Garantia de cobertura de testes nas principais rotas e serviços.
 
 #### RA4 - Gerar documentação e realizar deploy da API
 
