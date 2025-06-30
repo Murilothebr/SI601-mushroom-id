@@ -29,6 +29,8 @@ Antes de rodar o projeto, certifique-se de ter os seguintes requisitos instalado
 docker-compose up -d
 
 npx prisma migrate dev
+
+npx prisma db seed
 ```
 
 ## Rodar o projeto localmente (terminal)
