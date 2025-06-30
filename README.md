@@ -23,7 +23,7 @@ Antes de rodar o projeto, certifique-se de ter os seguintes requisitos instalado
 
 ## 🐘 Como rodar o banco de dados (MySQL)
 
-1. **Rodar o projeto e banco de dados com Docker Compose:**
+1. **Rodar banco de dados com Docker Compose:**
 
 ```bash
 docker-compose up -d
