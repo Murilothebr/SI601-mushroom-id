@@ -29,20 +29,20 @@ $ npm run start:prod
 
 #### RA1 - Projetar e desenvolver uma API funcional utilizando o framework NestJS
 
-- [ ] **ID1:** Configuração correta do ambiente e criação da API com rotas e controladores modulares.
-- [ ] **ID2:** Organização da lógica de negócio em services chamados pelos controladores.
-- [ ] **ID3:** Uso de providers e injeção de dependência configurada corretamente.
-- [ ] **ID4:** Criação e manipulação de rotas HTTP com parâmetros de rota, query e body.
-- [ ] **ID5:** Implementação de tratamento de erros utilizando filtros globais personalizados.
-- [ ] **ID6:** Criação e utilização de classes DTO para validação e consistência dos dados.
-- [ ] **ID7:** Aplicação de pipes de validação para assegurar integridade dos dados.
+- [x] **ID1:** Configuração correta do ambiente e criação da API com rotas e controladores modulares.
+- [x] **ID2:** Organização da lógica de negócio em services chamados pelos controladores.
+- [x] **ID3:** Uso de providers e injeção de dependência configurada corretamente.
+- [x] **ID4:** Criação e manipulação de rotas HTTP com parâmetros de rota, query e body.
+- [x] **ID5:** Implementação de tratamento de erros utilizando filtros globais personalizados.
+- [x] **ID6:** Criação e utilização de classes DTO para validação e consistência dos dados.
+- [x] **ID7:** Aplicação de pipes de validação para assegurar integridade dos dados.
 
 #### RA2 - Implementar persistência de dados com banco relacional (Prisma ou TypeORM)
 
-- [ ] **ID8:** Modelagem correta das entidades e relações (ERD).
-- [ ] **ID9:** Conexão configurada corretamente com banco de dados relacional (Prisma ou TypeORM).
-- [ ] **ID10:** Criação e aplicação das migrações de banco de dados.
-- [ ] **ID11:** Implementação correta das operações CRUD para uma ou mais entidades.
+- [x] **ID8:** Modelagem correta das entidades e relações (ERD).
+- [x] **ID9:** Conexão configurada corretamente com banco de dados relacional (Prisma ou TypeORM).
+- [x] **ID10:** Criação e aplicação das migrações de banco de dados.
+- [x] **ID11:** Implementação correta das operações CRUD para uma ou mais entidades.
 
 #### RA3 - Realizar testes automatizados da API
 
@@ -51,15 +51,15 @@ $ npm run start:prod
 
 #### RA4 - Gerar documentação e realizar deploy da API
 
-- [ ] **ID14:** Integração correta do Swagger, documentação completa e interativa.
+- [x] **ID14:** Integração correta do Swagger, documentação completa e interativa.
 - [ ] **ID15:** Deploy realizado com sucesso em plataforma de hospedagem na nuvem.
 - [ ] **ID16:** Verificação funcional no ambiente de produção (API, Swagger, banco de dados).
-- [ ] **ID17:** Configuração correta das variáveis de ambiente com ConfigModule.
-- [ ] **ID18:** Implementação correta do versionamento das APIs REST.
+- [x] **ID17:** Configuração correta das variáveis de ambiente com ConfigModule.
+- [x] **ID18:** Implementação correta do versionamento das APIs REST.
 
 #### RA5 - Implementar autenticação, autorização e segurança
 
-- [ ] **ID19:** Configuração da autenticação utilizando JWT.
-- [ ] **ID20:** Implementação de Guards para controle de acesso baseado em roles e permissões.
-- [ ] **ID21:** Configuração e uso de middleware para manipulação prévia das requisições.
-- [ ] **ID22:** Implementação de interceptadores para realizar logging ou modificar as respostas antes de enviá-las ao cliente.
+- [x] **ID19:** Configuração da autenticação utilizando JWT.
+- [x] **ID20:** Implementação de Guards para controle de acesso baseado em roles e permissões.
+- [x] **ID21:** Configuração e uso de middleware para manipulação prévia das requisições.
+- [x] **ID22:** Implementação de interceptadores para realizar logging ou modificar as respostas antes de enviá-las ao cliente.

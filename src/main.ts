@@ -4,6 +4,7 @@ import { ValidationPipe, VersioningType } from '@nestjs/common';
 import { CamelCaseInterceptor } from './interceptors/camel-case.interceptor';
 import { LoggingInterceptor } from './interceptors/logging.interceptor';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { CustomExceptionFilter } from './custom-exception/custom-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -36,6 +37,8 @@ async function bootstrap() {
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
+
+  app.useGlobalFilters(new CustomExceptionFilter());
 
   await app.listen(3000);
 }

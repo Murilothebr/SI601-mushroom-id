@@ -8,9 +8,14 @@ import { AuthModule } from './auth/auth.module';
 import { LoggerMiddleware } from './middlewares/logger.middleware';
 import { JwtAuthMiddleware } from './middlewares/jwt-auth.middleware';
 import { MushroomsController } from './mushrooms/mushrooms.controller';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [MushroomsModule, AuthModule],
+  imports: [
+    MushroomsModule,
+    AuthModule,
+    ConfigModule.forRoot({ isGlobal: true }),
+  ],
   controllers: [AppController],
   providers: [AppService, MushroomsService, PrismaService],
 })

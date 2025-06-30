@@ -75,17 +75,8 @@ export class MushroomsController {
     return this.featureService.update(id, updateData);
   }
 
-  @UseGuards(AuthGuard('jwt'))
-  @Patch(':id')
-  async partialUpdate(
-    @Param('id', ParseIntPipe) id: number,
-    @Body() partialUpdateData: Partial<Mushroom>,
-  ): Promise<any> {
-    return this.featureService.update(id, partialUpdateData);
-  }
-
-  @Delete(':id')
   @UseGuards(AuthGuard('jwt'), AdminGuard)
+  @Delete(':id')
   @HttpCode(204)
   async remove(@Param('id', ParseIntPipe) id: number): Promise<void> {
     return this.featureService.remove(id);
