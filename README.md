@@ -10,7 +10,7 @@ API crud de cogumelos para tornar o aprendizado sobre cogumelos mais interativo 
 
   ### https://dbdiagram.io/d/680831891ca52373f5f53f8b
 
-  ![Untitled](https://github.com/user-attachments/assets/42502a90-4eff-4669-bf9d-2c718d279f86)
+![image](https://github.com/user-attachments/assets/924c5bfa-3b87-4952-913f-6e035ecc082e)
 
 ## Compilar e rodar o projeto
 
