@@ -18,8 +18,8 @@ describe('MushroomsController', () => {
     remove: jest.fn(),
   };
 
-  const mockUserRequest = { user: { sub: 1, role: 'USER' } };
-  const mockAdminRequest = { user: { sub: 2, role: 'ADMIN' } };
+  const mockUserRequest = { user: { id: 1, role: 'USER' } };
+  const mockAdminRequest = { user: { id: 2, role: 'ADMIN' } };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -53,7 +53,7 @@ describe('MushroomsController', () => {
       expect(result).toEqual(dto);
       expect(service.create).toHaveBeenCalledWith(
         dto,
-        mockUserRequest.user.sub,
+        mockUserRequest.user.id,
       );
     });
 
@@ -79,7 +79,7 @@ describe('MushroomsController', () => {
       const result = await controller.findByUser(mockUserRequest);
 
       expect(result).toEqual(mushrooms);
-      expect(service.findByUser).toHaveBeenCalledWith(mockUserRequest.user.sub);
+      expect(service.findByUser).toHaveBeenCalledWith(mockUserRequest.user.id);
     });
   });
 
