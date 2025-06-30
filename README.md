@@ -10,7 +10,26 @@ API crud de cogumelos para tornar o aprendizado sobre cogumelos mais interativo 
 
   ### https://dbdiagram.io/d/680831891ca52373f5f53f8b
 
-  ![Untitled](https://github.com/user-attachments/assets/42502a90-4eff-4669-bf9d-2c718d279f86)
+## 📦 Requisitos
+
+Antes de rodar o projeto, certifique-se de ter os seguintes requisitos instalados:
+
+- [Docker](https://www.docker.com/) (versão 20 ou superior recomendada)
+- [Docker Compose](https://docs.docker.com/compose/) (v2 ou superior)
+- [Node.js](https://nodejs.org/) (versão 18 ou superior)
+- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
+
+---
+
+## 🐘 Como rodar o banco de dados (MySQL)
+
+1. **Suba o container do banco de dados com Docker Compose:**
+
+```bash
+docker-compose up -d
+
+npx prisma migrate dev
+```
 
 ## Compilar e rodar o projeto
 
@@ -19,10 +38,6 @@ API crud de cogumelos para tornar o aprendizado sobre cogumelos mais interativo 
 $ npm install
 
 $ npm run start
-
-$ npm run start:dev
-
-$ npm run start:prod
 ```
 
 ### Checklist de Desenvolvimento da API com NestJS
