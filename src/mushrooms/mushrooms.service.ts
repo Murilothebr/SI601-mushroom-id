@@ -99,6 +99,8 @@ export class MushroomsService {
         }
       }
       if (error instanceof NotFoundException) throw error;
+
+      console.log(error);
       throw new InternalServerErrorException('Failed to update mushroom.');
     }
   }

@@ -35,7 +35,7 @@ export class MushroomsController {
   @Post()
   @HttpCode(201)
   async create(@Body() body: CreateMushroomDto, @Req() req): Promise<any> {
-    const userId = req.user?.sub;
+    const userId = req.user?.id;
     if (!userId) {
       throw new UnauthorizedException('Missing user ID in request.');
     }
@@ -46,7 +46,7 @@ export class MushroomsController {
   @UseGuards(AuthGuard('jwt'))
   @Get('my')
   async findByUser(@Req() req): Promise<any[]> {
-    const userId = req.user?.sub;
+    const userId = req.user?.id;
     if (!userId) {
       throw new UnauthorizedException('Missing user ID in request.');
     }
